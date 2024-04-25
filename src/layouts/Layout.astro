@@ -1,0 +1,27 @@
+---
+import Header from "../components/Header.jsx";
+
+interface Props {
+  titlePage?: string;
+}
+
+const { titlePage } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{titlePage}</title>
+  </head>
+  <body>
+    <header>
+      <Header />
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer></footer>
+  </body>
+</html>
